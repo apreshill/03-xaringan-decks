@@ -1,0 +1,81 @@
+---
+title: "Circus Ship"
+output: xaringan::moon_reader
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.retina=3)
+library(babynames)
+library(tidyverse)
+```
+
+# Introduce yourself!
+
+> My name is Alison and I am a Data Scientist & Professional Educator at RStudio. I live in Portland, Oregon with my husband, daughter, and our sourdough starter.
+
+---
+
+# Find me at...
+
+All the details...
+
+---
+class: center, middle
+
+# Slide with centered content in the middle
+
+My name is Alison. 
+
+--
+
+I like hot toddies, 
+
+--
+
+`#rdogladies`, 
+
+--
+
+and babies.
+
+![Image of Momtocat](http://bit.ly/momtocat)
+
+---
+
+```{r echo=FALSE}
+tx_names <- babynames %>%
+  filter(name == "Dallas" | name == "Austin") %>% 
+  filter(sex == "F") 
+name_plot <- ggplot(tx_names , 
+                    aes(x = year, 
+                        y = prop,  
+                        group = name, 
+                        color = name)) + 
+  geom_line()
+name_plot
+```
+
+
+---
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+---
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
